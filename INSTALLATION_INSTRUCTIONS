@@ -1,0 +1,16 @@
+To setup the python environment to run python scripts and notebooks in this repository run:
+`conda env create -f environment.yml`
+
+Activate the new environment with the command `conda activate deepmicroscopy`
+
+Finally run `pip install -v -e /home/data/analysis-tools/mmdetection`
+
+(Note that /home/data/analysis-tools is where we installed mmdetction. You will have to update this to your installation directory.)
+
+
+Test your installation by running,
+`python /home/data/analysis-tools/mmdetection/tools/train.py src/3-varasana/config.py --work-dir=/home/data/refined/deep-microscopy/output/test/output_test_varasana`
+
+
+(If the test fails, please see the backup installation instructions in the `src` folder)
+
