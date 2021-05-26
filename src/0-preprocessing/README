@@ -1,0 +1,3 @@
+The script `run.py` can be used to create training data for mmdetection.  It parses the Labelbox annotations and saves the annoations and images to a specified data path. 'utils.py` contains some helper functions.
+
+The notebook 'example.ipynb' goes through an example, using parts of the script.
