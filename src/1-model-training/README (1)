@@ -1,0 +1,16 @@
+The curriculum is as follows:
+
+(i) White, Budding White
+(ii) White, Budding White, Opaque,Budding Opaque
+(iii) White, Budding White, Opauqe, Budding Opaque, Gray, Budding Gray
+(iii) White,Budding White, Opaque, Budding Opaque,Gray, Budding Gray, Shmoo
+(iv) White, Budding White, Opaque, Budding Opaque, Gray, Budding Gray,Shmoo, Pseudohyphae, P-start, P-junction
+(v) White, Budding White, Opaque, Budding Opaque, Gray, Budding Graym,Shmoo, Pseudohyphae, P-start, P-junction, Hyphae, H-start, H-junction
+
+Artifacts and Unknowns are present in each dataset of the curriculum. 
+
+The training data for each stage of the curriculum is located at `/home/data/refined/deep-microscopy/train-data/curriculum` where each dataset is named as the class that is being introduced at that particular stage.  For example, in stage 4 of the curriculum `Shmoo` is being introduced and the training data is located at `/home/data/refined/deep-microscopy/train-data/curriculum/white-opaque-gray-shmoo`.
+
+To run the the curriculum run `python train.py`. Note for now that the output path has to be set to `/home/data/refined/deep-microscopy/output/curriculum/output`.  This is because at each stage of the curriculum the last saved model from the previous stage is loaded.  This is currently hard coded into the config files found in `configs`.  The gpu_ids are also hard coded in and should be changed accordingly.
+
+As the curriculum procedes, the number of frozen layers of the feature extractor (ie, ResNet) is increased.  This is done in the respective config files for each stage.
