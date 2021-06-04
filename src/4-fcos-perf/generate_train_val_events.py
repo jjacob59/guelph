@@ -16,9 +16,9 @@ exp = 'exp27'
 target = "val"   # can be {val | train}
 threshes = [0.1]   #  , 0.3, 0.33, 0.35, 0.4, 0.5, 0.6]
 
-parent_dir = "/home/data/refined/deep-microscopy/output/final_experiment/"   # this points to the output of all experiments that you have run.
-dataset_dir = "/home/data/refined/deep-microscopy/train-data/final/"
-performance_save = "/home/data/refined/deep-microscopy/performance/" + exp + "_results/"
+parent_dir = CANDESCENCE + "output/"   # this points to the output of all experiments that you have run.
+dataset_dir = VARASANA + "train_validation"
+performance_save = CANDESCENCE + "performance/" + exp + "_results/"
 
 grades = ("white","opaque","gray","shmoo","pseudohyphae","hyphae")
 grade_dirs = ('white', 'white-opaque', 'white-opaque-gray', 'white-opaque-gray-shmoo', 

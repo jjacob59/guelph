@@ -74,5 +74,5 @@ else:
             print("\n\nSystem failed with grade ", i)
              
    
-os.system("curl -X POST  https://maker.ifttt.com/trigger/{finished}/with/key/nLhA1COLNOzlGa0dOawFP7sO3U_IfHzoGf4Z7ajHjgo?value1=" + exp)
+os.system("curl -X POST  https://maker.ifttt.com/trigger/{finished}/with/key/<yourkeyhere>?value1=" + exp)
 

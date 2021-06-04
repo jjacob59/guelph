@@ -10,15 +10,16 @@ import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
 
 
-exp = "exp27"
-this_experiment = "exp27_tv_objects/"
-thresh = 0.25   # for validation dataset
+exp = "exp27"   # this isn't so important here since we are only looking at the ground truth Varasana labels. 
+# however, we need to instantiate an Evaluator object and therefore require a config.
 
-learning_set_dir = "/home/data/refined/deep-microscopy/train-data/final/"
-output = "/home/data/refined/deep-microscopy/vaes/" 
+this_experiment = "exp27_tv_objects/"
+
+learning_set_dir = VARASANA + "train-validation/"
+output = CANDESCENCE + "vaes/" 
 
 # this points to the output of all experiments that you have run. We need this to instantiate an Evaluator
-parent_dir = "/home/data/refined/deep-microscopy/output/final_experiment/" + exp +"/"
+parent_dir = OUTPUT + "exp +"/"
 
 grades = ("white","opaque","gray","shmoo","pseudohyphae","hyphae")
 grade_dirs = ('white', 'white-opaque', 'white-opaque-gray', 'white-opaque-gray-shmoo', 

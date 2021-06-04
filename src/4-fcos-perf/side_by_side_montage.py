@@ -10,9 +10,12 @@ target = "val"   # can be {val | train}
 exp = 'exp27' 
 thresh = 0.25   #  , 0.3, 0.33, 0.35, 0.4, 0.5, 0.6]
 
-parent_dir = "/home/data/refined/deep-microscopy/output/final_experiment/" 
-target_file = "/home/data/refined/deep-microscopy/train-data/final/train_hyphae.pkl"     # FIX THIS
-output_dir = "/home/data/refined/deep-microscopy/performance/" + exp + "_results/visual_comparison/" + str(thresh) +"/"
+parent_dir = CANDESCENCE + "output/" 
+
+target_file = VARASANA + "/train-validation/" + val + "_hyphae.pkl"   
+
+
+output_dir = CANDESCENCE + "performance/" + exp + "_results/visual_comparison/" + str(thresh) +"/"
 config_file = parent_dir + exp + "/" + exp + ".py"
 network =  parent_dir + exp + "/latest.pth"
 

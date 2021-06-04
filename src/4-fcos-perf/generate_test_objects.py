@@ -31,9 +31,15 @@ numba = "_exp27_test_"
 exp = "exp27" 
 thresh = 0.25
 
-target_file_location = "/home/data/refined/deep-microscopy/train-data/final-test/"
-image_dir = "/home/data/refined/deep-microscopy/vaes/" + "test_object_" + numba + "_thresh_" + str(thresh) +"/"
-performance_save = "/home/data/refined/deep-microscopy/performance/" + exp + "_results/" 
+VARASANA = "/home/data/candescence/varasana/"
+target_file_location = VARASANA + "/test/"
+
+
+# this saves individual subimpages for each predicted bounding box. this is used by the VAE in src/5-vae.
+image_dir = CANDESCENCE + vaes/" + "test_object_" + numba + "_thresh_" + str(thresh) +"/"
+
+# the directory to save all output
+performance_save = CANDESCENCE + "/performance/" + exp + "_results/" 
 full_image_dir = performance_save + "full_validation_images/"
 
 
@@ -44,8 +50,8 @@ classes = {"Yeast White": 0, "Budding White": 1, "Yeast Opaque": 2,
                             "H-junction": 11, "P-junction":12,
                             "P-Start":13,"H-Start":14}
 
-model = init_detector("/home/data/refined/deep-microscopy/output/final_experiment/" + exp + "/" + exp + ".py", 
-                      "/home/data/refined/deep-microscopy/output/final_experiment/" + exp + "/" + "latest.pth")
+model = init_detector(OUTPUT + exp + "/" + exp + ".py", 
+                      OUTPUT + exp + "/" + "latest.pth")
 model.__dict__
 
 model.CLASSES = [i for i in classes]

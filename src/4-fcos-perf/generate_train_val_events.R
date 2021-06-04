@@ -7,8 +7,8 @@ exp <- 'exp27'
 thresh = 0.25   #  , 0.3, 0.33, 0.35, 0.4, 0.5, 0.6]
 
 # which folder to apply tool to
-output_dir <- file.path("/home/data/refined/deep-microscopy/output/final", exp )
-performance_save = file.path("/home/data/refined/deep-microscopy/performance", paste0(exp, "_results" ))
+output_dir <- file.path(CANDESCENCE, "output", exp )
+performance_save = file.path(CANDESCENCE, "performance", paste0(exp, "_results" ))
 
 
 path <- file.path( performance_save, paste0( "all_events", numba, "_thresh_", thresh, ".csv"))
@@ -101,10 +101,11 @@ out <- plot_confusion_matrix(confusion,
 # <-------- isolate all hallucinations.
   
 
-  new_image_dir <- "/home/data/refined/deep-microscopy/train-data/final/train"
+  new_image_dir <- file.path(VARASANA, "train_validation")
+  
   upper_bound <- thresh
   
-  v_blank <- grayscale(readRDS(file.path(root, "src/9-fcos-perf/data/v_blank.png")))
+  v_blank <- grayscale(readRDS(file.path(root, "src/4-fcos-perf/data/v_blank.png")))
 
   e_hallucinations <- e3 %>% filter( event == "hallucination" ) %>% arrange( dt_class ) %>%
            make_unique_by_iou( upper_bound) 
@@ -157,10 +158,10 @@ out <- plot_confusion_matrix(confusion,
   
   # <-------- isolate all blindspots
   
-  new_image_dir <- "/home/data/refined/deep-microscopy/train-data/final/train"
+  new_image_dir <- file.path(VARASANA, "train_validation")
   upper_bound <- thresh
   
-  v_blank <- readRDS(file.path(root, "src/9-fcos-perf/data/v_blank.png"))
+  v_blank <- readRDS(file.path(root, "src/4-fcos-perf/data/v_blank.png"))
   v_blank <- grayscale(v_blank)
   
   e_blindspots <- e3 %>% filter( event == "blindspot" ) %>% arrange( gt_class ) %>%

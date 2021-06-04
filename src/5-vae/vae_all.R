@@ -18,13 +18,13 @@ thresh = 0.25
 # Paths ----------------------
 
 
-train_events <- paste0("/home/data/refined/deep-microscopy/vaes/train_object__",  exp)
-val_events <- paste0("/home/data/refined/deep-microscopy/vaes/val_object__",  exp)
-test_events <- paste0("/home/data/refined/deep-microscopy/vaes/test_object__",  exp, "_test__thresh_", thresh)
+train_events <- file.path( CANDESCENCE, "vaes", paste0("train_object__",  exp))
+val_events <- file.path( CANDESCENCE, "vaes", paste0("val_object__",  exp))
+test_events <- file.path( CANDESCENCE, "vaes", paste0("test_object__",  exp, "_test__thresh_", thresh))
   
 
-keras_model_dir <-  file.path("/home/data/refined/deep-microscopy/vaes/keras_models", exp)
-output <- file.path("/home/data/refined/deep-microscopy/vaes/", exp)
+keras_model_dir <-  file.path(CANDESCENCE, "vaes", "keras_models", exp)
+output <- file.path(CANDESCENCE, "vaes", exp)
 
 classes <- c("Yeast White" ,   "Budding White",  "Yeast Opaque",   "Budding Opaque",
              "Yeast Gray",     "Budding Gray",  
@@ -80,7 +80,6 @@ wgo <- c("Yeast White" ,   "Budding White",  "Yeast Opaque",   "Budding Opaque",
          "Shmoo",                 
          "H-Start",        "P-Start"  )
 
-# wgo <- c("Yeast White", "Yeast Opaque", "Yeast Gray")
 
 
 files_x_train <- list.files(train_events, full.names = TRUE)

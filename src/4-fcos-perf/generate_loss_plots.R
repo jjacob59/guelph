@@ -8,8 +8,8 @@ source(file.path(root, "src/universal/code.R"))
 
 
 tool <- "./analyze_logs.py"    # which tool to use?
-target_dir <-  "/home/data/refined/deep-microscopy/output/final_experiment" # which folder to apply tool to
-save_results <- "/home/data/refined/deep-microscopy/performance" # expX/loss will be created for each ir in output_dir
+target_dir <-  "/home/data/refined/candescence/output/exp_0" #  point this to the output from src/3-curriculum
+save_results <- "/home/data/refined/candescence/performance" # expX/loss will be created for each ir in output_dir
 
 
 # ----> Generate plot curves  <-------
