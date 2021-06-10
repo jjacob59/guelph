@@ -1,0 +1,3 @@
+If you want to try out our classifier, you've come to the right place! The Jupyter notebook `tutorial.ipynb` walks through a simple case of running our model over a user specifed test image.  All the classes and functions in `tutorial.ipynb` are called from `utils.py`.  They consist primarily of wrappers of various mmdetection modules.
+
+This is should be enough to get you started.  Over time we'll add more tutorial notebooks to cover more advanced uses of our model (eg: fancy interpretability techniques).
