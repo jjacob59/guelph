@@ -7,7 +7,7 @@ The python scripts here can allow you to interact with our model in various ways
 
 * eval.py: generate images from our trained generator.  Run `python eval.py --chpt /candescence/GAN/model.pth`
 
-*generate_video.py: generate a continuous video from the interpolation of generated images.  Run `python generate_video.py`
+* generate_video.py: generate a continuous video from the interpolation of generated images.  Run `python generate_video.py`
 
 * models.py: contains the pytorch implementation of the GAN.
 
