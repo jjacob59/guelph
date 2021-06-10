@@ -1,6 +1,0 @@
-To run the detector over some images use the run_inference.py scripts as: `python run_inference ARG1 ARG2 ARG3 ARG4`
-
-- ARG1 is the path to the model (ie, the saved model from 1-model-training)
-- ARG2 is the path to a folder of images you want to run inference over.
-- ARG3 is the path to the config file used to train the loaded model (ie, associated with ARG1)
-- ARG4 is the confidence threshold for the detector
