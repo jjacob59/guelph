@@ -173,9 +173,9 @@ if __name__ == "__main__":
 
     from models import Generator as Generator_freeform
     
-    frames_dist_folder = 'project_video_frames' # a folder to save generated images
-    ckpt_path = '/home/van.bettauer/workspace/external-repositories/deep-generative/FastGAN-pytorch/train_results/cropped_images_experiment/models/45000.pth' # path to the checkpoint
-    video_name = '45000_epochs_video_cropped'  # name of the generated video
+    frames_dist_folder = 'generated_video' # a folder to save generated images
+    ckpt_path = 'candescence/GAN/model.pth' # path to the checkpoint
+    video_name = 'latent_walk'  # name of the generated video
 
     model_type = 'freeform'
     net = Generator_freeform(ngf=64, nz=256)
