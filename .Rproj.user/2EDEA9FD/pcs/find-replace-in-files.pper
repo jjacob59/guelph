@@ -1,0 +1,14 @@
+{
+    "dialog-state": {
+        "query": "bmp",
+        "path": "",
+        "regex": false,
+        "caseSensitive": false,
+        "filePatterns": [],
+        "excludeFilePatterns": [],
+        "resultsCount": 2952,
+        "errorCount": 0,
+        "replaceErrors": "",
+        "projectRelative": true
+    }
+}
