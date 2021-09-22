@@ -1,3 +1,4 @@
+# See INSTALL_INSTRUCTIONS. This file needs to be in $TOOLS/mmdetection/mmdet/datasets
 from .custom import CustomDataset
 from .builder import DATASETS
 import json
