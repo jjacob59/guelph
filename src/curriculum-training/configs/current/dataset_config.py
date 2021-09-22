@@ -1,5 +1,5 @@
-dataset_type = 'FilamentousDataset'
-data_root = '/home/data/refined/deep-microscopy/train-data/final/'
+dataset_type = 'GracetcDataset'
+data_root = '/home/data/refined/deep-microscopy/train-data/grace/'
 img_norm_cfg = dict(
     mean=[102.9801, 115.9465, 122.7717], std=[1.0, 1.0, 1.0], to_rgb=False)
 train_pipeline = [
@@ -32,17 +32,17 @@ data = dict(
     workers_per_gpu=1,
     train=dict(
         type=dataset_type,
-        ann_file=data_root + 'train_opaque.pkl',
+        ann_file=data_root + 'train_gracetc.pkl',
         img_prefix=data_root + 'train/',
         pipeline=train_pipeline),
     val=dict(
         type=dataset_type,
-        ann_file=data_root + 'val_opaque.pkl',
+        ann_file=data_root + 'val_gracetc.pkl',
         img_prefix=data_root + 'val/',
         pipeline=test_pipeline),
     test=dict(
         type=dataset_type,
-        ann_file=data_root + 'val_opaque.pkl',
+        ann_file=data_root + 'val_gracetc.pkl',
         img_prefix=data_root + 'val/',
         pipeline=test_pipeline))
 #evaluation = dict(interval=10, metric=['mAP','AR@100','bbox'])

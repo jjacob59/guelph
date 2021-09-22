@@ -9,6 +9,6 @@ log_config = dict(
 # yapf:enable
 dist_params = dict(backend='nccl')
 log_level = 'INFO'
-#load_from = '/home/data/refined/candescence/production/models/candescence_version_1.0/model.pth'
+load_from = '/home/data/refined/candescence/production/models/candescence_version_1.0/model.pth'
 resume_from = None
 workflow = [('train', 1)]
