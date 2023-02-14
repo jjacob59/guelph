@@ -35,7 +35,7 @@ class Evaluator():
         self.cfg["gpu-ids"] = 6
         self.model = build_detector(
         self.cfg.model, train_cfg=self.cfg.train_cfg, test_cfg=self.cfg.test_cfg)
-        checkpoint_dict = load_checkpoint(model,checkpoint_file)
+        checkpoint_dict = load_checkpoint(self.model,checkpoint_file)
         state_dict = checkpoint_dict["state_dict"]
         self.model.CLASSES = checkpoint_dict['meta']['CLASSES']
         self.model.load_state_dict(state_dict)
@@ -47,7 +47,9 @@ class Evaluator():
         test_pipeline = Compose(self.cfg.data.val.pipeline)
         data = test_pipeline(data)
         data = collate([data], samples_per_gpu=1)
-        x = model.extract_feat(data["img"][0]) 
+
+        x = self.model.extract_feat(data["img"][0])
+ 
         outs = self.model.bbox_head(x)  # What does this output look like? Is it per pixel? (Note: review the FCOS paper)
         bbox_list = self.model.bbox_head.get_bboxes(
             *outs, data["img_metas"][0].data[0], rescale=False)
@@ -81,7 +83,7 @@ class Evaluator():
         x = self.model.extract_feat(data["img"][0])  # Feature maps
 
         outs = self.model.bbox_head(x)  # What does this output look like? Is it per pixel? (Note: review the FCOS paper)
-        bbox_list = model.bbox_head.get_bboxes(
+        bbox_list = self.model.bbox_head.get_bboxes(
                     *outs, data["img_metas"][0].data[0], rescale=False)
 
         return np.array([bbox_list[0][0][i].numpy() for i in range(len(bbox_list[0][0].numpy())) if bbox_list[0][1][i] == cls])
