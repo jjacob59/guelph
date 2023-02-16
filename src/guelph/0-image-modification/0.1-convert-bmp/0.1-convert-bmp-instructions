@@ -1,0 +1,7 @@
+#go to directory that contains the raw images you want to convert and run command from there e.g. /home/data/raw/candescence/guelph/incucyte
+#change path argument in the following command to the directory where you would like the images to be outputted 
+#colorspace argument "gray" makes images grayscale
+#resize argument "800x800!" makes the dimensions of the images to 800x800 (the proper size for this software)
+#format argument "bmp *.jpg" changes the file format from .jpeg to .bmp
+
+mogrify -colorspace gray -path /home/data/refined/candescence/guelph/incucyte/0-image-modification/0.1-converted-bmp/ -resize '800x800!' -format bmp *.jpg
